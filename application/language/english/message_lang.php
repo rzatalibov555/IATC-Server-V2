@@ -1,0 +1,57 @@
+<?php 
+
+$lang['home']               = 'Home';
+$lang['courses']            = 'Courses';
+$lang['teachers']           = 'Teachers';
+$lang['about']              = 'About';
+$lang['search']             = 'Search';
+$lang['contact']            = 'Contact';
+$lang['all_courses']        = 'All courses';
+$lang['all_categories_text']= 'All categories';
+$lang['most_categories']    = 'Most categories';
+$lang['all_c']              = 'All';
+$lang['all_categories']     = 'categories';
+$lang['most_courses']       = 'Most courses';
+$lang['our_courses']        = 'Our courses';
+$lang['our_all_courses']    = 'Our all courses';
+$lang['active']             = 'Active';
+$lang['deactive']           = 'Deactive';
+$lang['pending']            = 'Pending';
+$lang['more']               = 'More';
+$lang['news']               = 'News';
+$lang['all_news']           = 'All news';
+$lang['reserved']           = 'All right reserved!';
+$lang['category']           = 'Category';
+$lang['categories']         = 'Categories';
+$lang['teacherr']           = 'Teacher';
+$lang['events']             = 'Events';
+$lang['events_our']         = 'Our events';
+$lang['event']              = 'Event';
+$lang['date']               = 'Date';
+$lang['duration']           = 'Duration';
+$lang['location']           = 'Location';
+$lang['all_eventss']        = 'All events';
+
+$lang['gallery']            = 'Galereya';
+
+$lang['find_in_category']   = 'According to this category ';
+$lang['find_category']      = 'Find category';
+$lang['fing_course']        = 'Find course';
+$lang['no_find_course']     = 'Course not found';
+$lang['our']                = 'Our ';
+$lang['most']               = 'Most ';
+$lang['teacherss']          = 'Teachers';
+$lang['teachersss']         = 'Teacher’s ';
+$lang['coursesss']          = 'Courses';
+$lang['subscribe']          = 'Subscribe';
+$lang['your_email']         = 'Your email';
+$lang['other_courses']      = 'Other courses';
+$lang['same']               = 'Same';
+$lang['courses_list']       = 'Courses';
+$lang['share']              = 'Share';
+$lang['close']              = 'Close';
+$lang['aboutt']             = 'About';
+$lang['about_course']       = 'About course';
+$lang['about_event']        = 'About event';
+$lang['about_course_text']  = 'Description';
+$lang['program']            = 'Program';
