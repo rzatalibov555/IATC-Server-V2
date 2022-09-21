@@ -367,4 +367,101 @@ class Item5Controller extends CI_Controller{
     }
 
 
+
+    public function add_photo_form_co($id)
+    {
+
+      
+        $viewData = new stdClass();
+
+        $item = $this->item5_model->get_single(
+            array("co_id" => $id)
+        );
+
+        //        $get_all_item_category = $this->item10_model->get_all_item_category();
+        //        $get_all_item_status   = $this->item10_model->get_all_item_status();
+        //        $viewData->get_all_item_category = $get_all_item_category;
+        //        $viewData->get_all_item_status   = $get_all_item_status;
+
+        $viewData->single_item   = $item;
+
+        $viewData->rootFolder = $this->rootFolder;
+        $viewData->viewFolder = $this->viewFolder;
+        $viewData->subViewFolder = "add";
+
+        $this->load->view("{$viewData->rootFolder}/{$viewData->viewFolder}/{$viewData->subViewFolder}/file_upload", $viewData);
+    }
+
+
+    public function fileUpload($id)
+    {
+        $id = $this->security->xss_clean($id);
+
+
+                                
+        if(!empty($_FILES)){ 
+            // Include the database configuration file 
+            
+             
+            // File path configuration 
+            $uploadDir = "upload/contact/"; 
+            // $fileName = basename($_FILES['file']['name']);
+
+            $temp = explode(".", $_FILES["file"]["name"]);
+            $rand = rand(111111,666666);
+            $newfilename = $rand.round(microtime(true)) . '.' . end($temp);
+            // move_uploaded_file($_FILES["file"]["tmp_name"], "../img/imageDirectory/" . $newfilename);
+
+            
+            $uploadFilePath = $uploadDir.$newfilename; 
+             
+            // Upload file to server 
+            if(move_uploaded_file($_FILES['file']['tmp_name'], $uploadFilePath)){ 
+
+                // echo json_encode($uploadFilePath);
+
+                $data = [
+                    'gl_id_main'    => $id,
+                    'gl_img_name'   => $uploadFilePath,
+                    'gl_date'       => date("Y-m-d H:i:s"),
+                    'gl_creater_id' => $_SESSION['admin_id'],
+                ];
+
+               
+                $data = $this->security->xss_clean($data);
+
+                if(isset($_SESSION['admin_id']) && isset($_SESSION['admin_status']) && isset($_SESSION['admin_category'])){
+
+                    $this->db->insert('gallery_list',$data);
+                    
+                }else{
+                    redirect(base_url('admin_login'));
+                    exit();
+                }
+
+                
+                
+            } 
+            
+            
+        } 
+    }
+
+    public function delete_sub_img($id){
+        $id = $this->security->xss_clean($id);
+
+        if (isset($_SESSION['admin_id']) && isset($_SESSION['admin_status']) && isset($_SESSION['admin_category'])) {
+
+            $this->db->where('gl_id', $id)->delete('gallery_list');
+            redirect($_SERVER['HTTP_REFERER']);
+
+        } else {
+            redirect(base_url('admin_login'));
+            exit();
+        }
+
+    }
+
+
+
 }

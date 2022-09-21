@@ -32,7 +32,7 @@ $lang['duration']           = 'Duration';
 $lang['location']           = 'Location';
 $lang['all_eventss']        = 'All events';
 
-$lang['gallery']            = 'Galereya';
+$lang['gallery']            = 'Gallery';
 
 $lang['find_in_category']   = 'According to this category ';
 $lang['find_category']      = 'Find category';

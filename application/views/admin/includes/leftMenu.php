@@ -64,12 +64,12 @@ if (empty($adminInfo['a_id'])){
                                     </a>
                                 </li>
 
-                                <li>
+                                <!-- <li>
                                     <a href="<?php echo base_url ('Gallery/gallery_list');?>" >
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         Galereya
                                     </a>
-                                </li>
+                                </li> -->
 
 
                                 <li>
@@ -86,7 +86,14 @@ if (empty($adminInfo['a_id'])){
                                     </a>
                                 </li>
 
-<!--                                <li>-->
+                                <li>
+                                    <a href="<?php echo base_url ('admin_item_co_list');?>" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        Gallery
+                                    </a>
+                                </li>
+
+<!--                                <li>
 <!--                                    <a href="--><?php //echo base_url ('admin_item_tr_list');?><!--" >-->
 <!--                                        <i class="metismenu-icon pe-7s-rocket"></i>-->
 <!--                                        Programm-->

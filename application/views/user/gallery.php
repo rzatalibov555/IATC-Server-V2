@@ -10,11 +10,11 @@
                <div class="row">
                   <div class="col-xxl-12">
                      <div class="page__title-wrapper mt-110">
-                        <h3 class="page__title"><?php echo $this->lang->line('courses'); ?></h3>
+                        <h3 class="page__title"><?php echo $this->lang->line('teachers'); ?></h3>
                         <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
                               <li class="breadcrumb-item"><a href="<?php echo base_url('index'); ?>"><?php echo $this->lang->line('home'); ?></a></li>
-                              <li class="breadcrumb-item active" aria-current="page"><?php echo $this->lang->line('courses'); ?></li>
+                              <li class="breadcrumb-item active" aria-current="page"><?php echo $this->lang->line('teachers'); ?></li>
                            </ol>
                         </nav>
                      </div>
@@ -24,148 +24,191 @@
          </section>
          <!-- page title area end -->
 
-         <!-- course area start -->
-         <section class="course__area pt-120 pb-120">
+         <!-- teacher area start -->
+         <section class="teacher__area pt-115 pb-110">
             <div class="container">
-               <div class="course__tab-inner grey-bg-2 mb-50">
-                  <div class="row align-items-center">
-                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                        <div class="course__tab-wrapper d-flex align-items-center">
-                           <div class="course__tab-btn">
-                              <ul class="nav nav-tabs" id="courseTab" role="tablist">
-                                 <li class="nav-item" role="presentation">
-                                   <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid" type="button" role="tab" aria-controls="grid" aria-selected="true">
-                                    <svg class="grid" viewBox="0 0 24 24">
-                                       <rect x="3" y="3" class="st0" width="7" height="7"/>
-                                       <rect x="14" y="3" class="st0" width="7" height="7"/>
-                                       <rect x="14" y="14" class="st0" width="7" height="7"/>
-                                       <rect x="3" y="14" class="st0" width="7" height="7"/>
-                                       </svg>
-                                   </button>
-                                 </li>
-                                 <li class="nav-item" role="presentation">
-                                   <button class="nav-link list" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab" aria-controls="list" aria-selected="false">
-                                    <svg class="list" viewBox="0 0 512 512">
-                                       <g id="Layer_2_1_">
-                                          <path class="st0" d="M448,69H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,69,448,69z"/>
-                                          <circle class="st0" cx="64" cy="100" r="31"/>
-                                          <path class="st0" d="M448,225H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,225,448,225z"/>
-                                          <circle class="st0" cx="64" cy="256" r="31"/>
-                                          <path class="st0" d="M448,381H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,381,448,381z"/>
-                                          <circle class="st0" cx="64" cy="412" r="31"/>
-                                       </g>
-                                       </svg>
-                                   </button>
-                                 </li>
-                              </ul>
-                           </div>
-                           <div class="course__view">
-                               
-
-                           </div>
-                        </div>
-                     </div>
-<!--                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6">-->
-<!--                        -->
-<!--                     </div>-->
-                  </div>
-               </div>
-
-               <style>
-                  .f_size{
-                    font-size: 10px!important;
-                    padding-right: 0px!important;
-                  }
-
-                  .gallery_item_div{
-                    width: 100%
-                  }
-
-                  .gallery_item_div h6{
-                    font-size: 15px!important;
-                    border: 1px solid grey;
-                    padding: 5px;
-                    width: 100%;
-                    display: inline-block;
-                    text-align: center
-                  }
-               </style>
                <div class="row">
-                  <div class="col-xxl-12">
-                     <div class="course__tab-conent">
-                        <div class="tab-content" id="courseTabContent">
-                           <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
-                              <div class="row" style="">
+                  <div class="col-xxl-6 offset-xxl-3">
+                     <div class="section__title-wrapper text-center mb-60">
+                        <h2 class="section__title"><?php echo $this->lang->line('our'); ?> <br>
+                        <?php echo $this->lang->line('most'); ?> <span class="yellow-bg"> <?php echo $this->lang->line('teacherss'); ?> <img src="<?php echo base_url('assets/user/'); ?>assets/img/shape/yellow-bg-2.png" alt="">  </span> <br>
+                        </h2>
+<!--                        <p></p>-->
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
 
-                                  <?php foreach ($gallery_list as $gallery_list_item) { ?>
-
-                                    <?php
-                                    
-                                    $get_row_image = $this->db->where('gallery_id',$gallery_list_item['gallery_id'])->get('gallery_list')->row();
-
-                                    if($get_row_image){
-                                        $image_url = base_url('upload/gallery/'.$get_row_image->gallery_image_name);
-                                    }else{
-                                        $image_url = 'https://i.pinimg.com/736x/11/fc/d8/11fcd8db9c5efd7d30a612895296495b.jpg';
-                                    }
-                                    
-                                    ?>
-
-                                        <div class="col-lg-3">
-                                            <a href="<?php echo base_url('gallery_single/'.$gallery_list_item['gallery_id']); ?>">
-                                                <div class="gallery_item_div">
-                                                    <img style="width: 100%;" src="<?php echo $image_url; ?>" alt="">
-                                                    <h6><?php echo $gallery_list_item['gallery_name_'.$this->session->userdata('lang_code')]; ?></h6>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                  <?php } ?>
-
-                                  
-                              </div>
+                   <?php foreach ($gallery_list as $all_teachers_key){ ?>
+                       <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                           <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">
+                               <div class="teacher__thumb w-img fix">
+                                   <a href="<?php echo base_url('gallery_single/'.$all_teachers_key['co_id']); ?>">
+                                       <?php if($all_teachers_key['co_img']){ ?>
+                                          <img height="300" src="<?php echo base_url('upload/contact/'.$all_teachers_key['co_img']); ?>" alt="">
+                                       <?php }else{ ?>
+                                          <img src="<?php echo base_url('assets/admin/assets/images/no-img.png'); ?>" alt="">
+                                       <?php } ?>
+                                   </a>
+                               </div>
+                               <div class="teacher__content">
+                                   <h3 class="teacher__title"><?php echo $all_teachers_key['co_title_'.$this->session->userdata('lang_code')]; ?></h3>
+                                   <br>
+                                   <span><?php echo $all_teachers_key['i_c5_name']; ?></span>
+                               </div>
                            </div>
+                       </div>
+                   <?php } ?>
 
-                         </div>
-                     </div>
-                  </div>
+
+
+<!--                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">-->
+<!--                     <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">-->
+<!--                        <div class="teacher__thumb w-img fix">-->
+<!--                           <a href="--><?php //echo base_url('instructor_single/1'); ?><!--">-->
+<!--                              <img src="--><?php //echo base_url('assets/user/'); ?><!--assets/img/teacher/teacher-2.jpg" alt="">-->
+<!--                           </a>-->
+<!--                        </div>-->
+<!--                        <div class="teacher__content">-->
+<!--                           <h3 class="teacher__title">Kelly Franklin,</h3> -->
+<!--                           <span>Desginer</span>-->
+<!---->
+<!--                           <div class="teacher__social">-->
+<!--                              <ul>-->
+<!--                                 <li><a href="#"><i class="social_facebook"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_twitter"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_vimeo"></i></a></li>-->
+<!--                              </ul>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">-->
+<!--                     <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">-->
+<!--                        <div class="teacher__thumb w-img fix">-->
+<!--                           <a href="#">-->
+<!--                              <img src="--><?php //echo base_url('assets/user/'); ?><!--assets/img/teacher/teacher-3.jpg" alt="">-->
+<!--                           </a>-->
+<!--                        </div>-->
+<!--                        <div class="teacher__content">-->
+<!--                           <h3 class="teacher__title">Hilary Ouse,</h3> -->
+<!--                           <span>Markater</span>-->
+<!---->
+<!--                           <div class="teacher__social">-->
+<!--                              <ul>-->
+<!--                                 <li><a href="#"><i class="social_facebook"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_twitter"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_vimeo"></i></a></li>-->
+<!--                              </ul>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">-->
+<!--                     <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">-->
+<!--                        <div class="teacher__thumb w-img fix">-->
+<!--                           <a href="#">-->
+<!--                              <img src="--><?php //echo base_url('assets/user/'); ?><!--assets/img/teacher/teacher-5.jpg" alt="">-->
+<!--                           </a>-->
+<!--                        </div>-->
+<!--                        <div class="teacher__content">-->
+<!--                           <h3 class="teacher__title">Lillian Walsh,</h3> -->
+<!--                           <span>CO Founder</span>-->
+<!---->
+<!--                           <div class="teacher__social">-->
+<!--                              <ul>-->
+<!--                                 <li><a href="#"><i class="social_facebook"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_twitter"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_vimeo"></i></a></li>-->
+<!--                              </ul>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">-->
+<!--                     <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">-->
+<!--                        <div class="teacher__thumb w-img fix">-->
+<!--                           <a href="#">-->
+<!--                              <img src="--><?php //echo base_url('assets/user/'); ?><!--assets/img/teacher/teacher-4.jpg" alt="">-->
+<!--                           </a>-->
+<!--                        </div>-->
+<!--                        <div class="teacher__content">-->
+<!--                           <h3 class="teacher__title">Shahnewaz,</h3> -->
+<!--                           <span>Web Developer</span>-->
+<!---->
+<!--                           <div class="teacher__social">-->
+<!--                              <ul>-->
+<!--                                 <li><a href="#"><i class="social_facebook"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_twitter"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_vimeo"></i></a></li>-->
+<!--                              </ul>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">-->
+<!--                     <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">-->
+<!--                        <div class="teacher__thumb w-img fix">-->
+<!--                           <a href="#">-->
+<!--                              <img src="--><?php //echo base_url('assets/user/'); ?><!--assets/img/teacher/teacher-6.jpg" alt="">-->
+<!--                           </a>-->
+<!--                        </div>-->
+<!--                        <div class="teacher__content">-->
+<!--                           <h3 class="teacher__title">Nicola Tesla,</h3> -->
+<!--                           <span>Engineer</span>-->
+<!---->
+<!--                           <div class="teacher__social">-->
+<!--                              <ul>-->
+<!--                                 <li><a href="#"><i class="social_facebook"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_twitter"></i></a></li>-->
+<!--                                 <li><a href="#"><i class="social_vimeo"></i></a></li>-->
+<!--                              </ul>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
                </div>
-               
             </div>
          </section>
-         <!-- course area end -->
-<style>
-   .course__content{
-      min-height: 186px!important;
-   }
-</style>
-         <!-- cta area start -->
-         <section class="cta__area mb--120">
-            <div class="container">
-               <div class="cta__inner blue-bg fix">
-                  <div class="cta__shape">
-                     <img src="<?php echo base_url('assets/user/'); ?>assets/img/cta/cta-shape.png" alt="">
-                  </div>
-                  <div class="row align-items-center">
-                     <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-8">
-                        <div class="cta__content">
-                           <h3 class="cta__title">You can be your own Guiding star with our help</h3>
-                        </div>
-                     </div>
-                     <div class="col-xxl-5 col-xl-5 col-lg-4 col-md-4">
-                        <div class="cta__more d-md-flex justify-content-end p-relative z-index-1">
-                           <a href="#" class="e-btn e-btn-white">Get Started</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- cta area end -->
+         <!-- teacher area end -->
 
-
+         <!-- banner area start -->
+<!--         <section class="banner__area pb-80">-->
+<!--            <div class="container">-->
+<!--               <div class="row">-->
+<!--                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">-->
+<!--                     <div class="banner__item p-relative mb-40" data-background="--><?php //echo base_url('assets/user/'); ?><!--assets/img/banner/banner-bg-1.jpg">-->
+<!--                        <div class="banner__content">-->
+<!--                           <span>Free</span>-->
+<!--                           <h3 class="banner__title">-->
+<!--                              <a href="course-details.php">Germany Foundation <br> Document</a>-->
+<!--                           </h3>-->
+<!--                           <a href="course-grid.php" class="e-btn e-btn-2">View Courses</a>-->
+<!--                        </div>-->
+<!--                        <div class="banner__thumb d-none d-sm-block d-md-none d-lg-block">-->
+<!--                           <img src="--><?php //echo base_url('assets/user/'); ?><!--assets/img/banner/banner-img-1.png" alt="">-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">-->
+<!--                     <div class="banner__item p-relative mb-40" data-background="--><?php //echo base_url('assets/user/'); ?><!--assets/img/banner/banner-bg-2.jpg">-->
+<!--                        <div class="banner__content">-->
+<!--                           <span class="orange">new</span>-->
+<!--                           <h3 class="banner__title">-->
+<!--                              <a href="course-details.php">Online Courses <br>From Eduka University</a>-->
+<!--                           </h3>-->
+<!--                           <a href="course-grid.php" class="e-btn e-btn-2">Find Out More</a>-->
+<!--                        </div>-->
+<!--                        <div class="banner__thumb banner__thumb-2 d-none d-sm-block d-md-none d-lg-block">-->
+<!--                           <img src="--><?php //echo base_url('assets/user/'); ?><!--assets/img/banner/banner-img-2.png" alt="">-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+         <!-- banner area end -->
       </main>
-
 
 <?php $this->load->view('user/includes/footer'); ?>
 <?php $this->load->view('user/includes/footerStyle'); ?>

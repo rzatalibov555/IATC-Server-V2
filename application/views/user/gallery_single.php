@@ -1,156 +1,143 @@
 <?php $this->load->view('user/includes/headerStyle'); ?>
 <?php $this->load->view('user/includes/preloader'); ?>
 <?php $this->load->view('user/includes/other_navbar'); ?>
+<link rel="stylesheet" href="<?php echo base_url('assets/user/light_gallery.css'); ?>">
+<main>
 
-      <main>
+   <!-- page title area start -->
+   <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="<?php echo base_url('assets/user/'); ?>assets/img/page-title/page-title.jpg">
+      <div class="container">
+         <div class="row">
+            <div class="col-xxl-12">
+               <div class="page__title-wrapper mt-110">
+                  <h3 class="page__title"><?php echo $this->lang->line('gallery'); ?></h3>
+                  <nav aria-label="breadcrumb">
+                     <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('index'); ?>"><?php echo $this->lang->line('home'); ?></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?php echo $this->lang->line('gallery'); ?></li>
+                     </ol>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- page title area end -->
 
-         <!-- page title area start -->
-         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="<?php echo base_url('assets/user/'); ?>assets/img/page-title/page-title.jpg">
-            <div class="container">
-               <div class="row">
-                  <div class="col-xxl-12">
-                     <div class="page__title-wrapper mt-110">
-                        <h3 class="page__title"><?php echo $this->lang->line('courses'); ?></h3>
-                        <nav aria-label="breadcrumb">
-                           <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="<?php echo base_url('index'); ?>"><?php echo $this->lang->line('home'); ?></a></li>
-                              <li class="breadcrumb-item active" aria-current="page"><?php echo $this->lang->line('courses'); ?></li>
-                           </ol>
-                        </nav>
-                     </div>
+   <!-- course area start -->
+   <div class="rs-project style2 pt-100 pb-100 md-pt-70 md-pb-70">
+    <div class="container">
+
+        <div class="descrip">
+            <h2 class="text-center"><?php echo $gallery_single['co_title_'.$this->session->userdata('lang_code')]; ?></h2>
+            <div class="subDescr">
+            <?php echo $gallery_single['co_description_'.$this->session->userdata('lang_code')]; ?>
+            <b><span style="color: #0e1133;"><?php echo date("d M Y", strtotime($gallery_single['co_date'])); ?></span></b>
+            </div>
+        </div>
+
+
+        <div class="row grid">
+
+
+
+
+            <!-- -------------------------------------------- -->
+
+            <link rel="stylesheet" href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css">
+            <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+            <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+            <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+            <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+            <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+            <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+            <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+            <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+
+
+           
+
+            <div class="col-lg-12 col-md-12 mb-30 grid-item ">
+
+                <div class="demo-gallery mob_gall_center">
+                    <ul class="demo-lightgallery " id="lightgallery">
+
+                        <?php foreach ($gallery as $item) { ?>
+                            <!-- <div class="col-lg-3 col-md-3 mb-30 grid-item ">
+                            <div class="project-item">
+                                <div class="project-img">
+                                    <img class="project_img_img" src="<?php echo base_url($item['gl_img_name']); ?>" alt="images">
+                                </div>
+
+                            </div>
+                        </div> -->
+
+                            <li class="mob_gall" data-src="<?php echo base_url($item['gl_img_name']); ?>">
+                                <a href="">
+                                    <img class="img-responsive" src="<?php echo base_url($item['gl_img_name']); ?>">
+                                    <div class="demo-gallery-poster">
+                                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">
+                                    </div>
+                                </a>
+                            </li>
+                        <?php } ?>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- -------------------------------------------- -->
+
+
+
+        </div>
+    </div>
+</div>
+   <!-- course area end -->
+   <style>
+      .course__content {
+         min-height: 186px !important;
+      }
+   </style>
+   <!-- cta area start -->
+   <section class="cta__area mb--120">
+      <div class="container">
+         <div class="cta__inner blue-bg fix">
+            <div class="cta__shape">
+               <img src="<?php echo base_url('assets/user/'); ?>assets/img/cta/cta-shape.png" alt="">
+            </div>
+            <div class="row align-items-center">
+               <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-8">
+                  <div class="cta__content">
+                     <h3 class="cta__title">You can be your own Guiding star with our help</h3>
+                  </div>
+               </div>
+               <div class="col-xxl-5 col-xl-5 col-lg-4 col-md-4">
+                  <div class="cta__more d-md-flex justify-content-end p-relative z-index-1">
+                     <a href="#" class="e-btn e-btn-white">Get Started</a>
                   </div>
                </div>
             </div>
-         </section>
-         <!-- page title area end -->
-
-         <!-- course area start -->
-         <section class="course__area pt-120 pb-120">
-            <div class="container">
-               <div class="course__tab-inner grey-bg-2 mb-50">
-                  <div class="row align-items-center">
-                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                        <div class="course__tab-wrapper d-flex align-items-center">
-                           <div class="course__tab-btn">
-                              <ul class="nav nav-tabs" id="courseTab" role="tablist">
-                                 <li class="nav-item" role="presentation">
-                                   <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid" type="button" role="tab" aria-controls="grid" aria-selected="true">
-                                    <svg class="grid" viewBox="0 0 24 24">
-                                       <rect x="3" y="3" class="st0" width="7" height="7"/>
-                                       <rect x="14" y="3" class="st0" width="7" height="7"/>
-                                       <rect x="14" y="14" class="st0" width="7" height="7"/>
-                                       <rect x="3" y="14" class="st0" width="7" height="7"/>
-                                       </svg>
-                                   </button>
-                                 </li>
-                                 <li class="nav-item" role="presentation">
-                                   <button class="nav-link list" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab" aria-controls="list" aria-selected="false">
-                                    <svg class="list" viewBox="0 0 512 512">
-                                       <g id="Layer_2_1_">
-                                          <path class="st0" d="M448,69H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,69,448,69z"/>
-                                          <circle class="st0" cx="64" cy="100" r="31"/>
-                                          <path class="st0" d="M448,225H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,225,448,225z"/>
-                                          <circle class="st0" cx="64" cy="256" r="31"/>
-                                          <path class="st0" d="M448,381H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,381,448,381z"/>
-                                          <circle class="st0" cx="64" cy="412" r="31"/>
-                                       </g>
-                                       </svg>
-                                   </button>
-                                 </li>
-                              </ul>
-                           </div>
-                           <div class="course__view">
-                               
-
-                           </div>
-                        </div>
-                     </div>
-<!--                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6">-->
-<!--                        -->
-<!--                     </div>-->
-                  </div>
-               </div>
-
-               <style>
-                  .f_size{
-                    font-size: 10px!important;
-                    padding-right: 0px!important;
-                  }
-
-                  .gallery_item_div{
-                    width: 100%
-                  }
-
-                  .gallery_item_div h6 a{
-                    font-size: 15px!important;
-                    border: 1px solid grey;
-                    padding: 5px;
-                    width: 100%;
-                    display: inline-block;
-                    text-align: center
-                  }
-               </style>
-               <div class="row">
-                  <div class="col-xxl-12">
-                     <div class="course__tab-conent">
-                        <div class="tab-content" id="courseTabContent">
-                           <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
-                              <div class="row" style="">
-
-                                  <?php foreach ($gallery_list as $gallery_list_item) { ?>
-
-                                        <div class="col-lg-3">
-                                            <div class="gallery_item_div">
-                                                <img style="width: 100%" src="<?php echo base_url('upload/gallery/'.$gallery_list_item['gallery_image_name']); ?>" alt="">
-                                            </div>
-                                        </div>
-
-                                  <?php } ?>
-
-                                  
-                              </div>
-                           </div>
-
-                         </div>
-                     </div>
-                  </div>
-               </div>
-               
-            </div>
-         </section>
-         <!-- course area end -->
-<style>
-   .course__content{
-      min-height: 186px!important;
-   }
-</style>
-         <!-- cta area start -->
-         <section class="cta__area mb--120">
-            <div class="container">
-               <div class="cta__inner blue-bg fix">
-                  <div class="cta__shape">
-                     <img src="<?php echo base_url('assets/user/'); ?>assets/img/cta/cta-shape.png" alt="">
-                  </div>
-                  <div class="row align-items-center">
-                     <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-8">
-                        <div class="cta__content">
-                           <h3 class="cta__title">You can be your own Guiding star with our help</h3>
-                        </div>
-                     </div>
-                     <div class="col-xxl-5 col-xl-5 col-lg-4 col-md-4">
-                        <div class="cta__more d-md-flex justify-content-end p-relative z-index-1">
-                           <a href="#" class="e-btn e-btn-white">Get Started</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- cta area end -->
+         </div>
+      </div>
+   </section>
+   <!-- cta area end -->
 
 
-      </main>
+</main>
 
 
 <?php $this->load->view('user/includes/footer'); ?>
 <?php $this->load->view('user/includes/footerStyle'); ?>
+
+<script>
+   var elements = document.getElementsByClassName('demo-lightgallery');
+   for (let item of elements) {
+      lightGallery(item, {
+         share: false
+      })
+   }
+</script>

@@ -57,13 +57,31 @@ class UserController extends CI_controller
 
     public function gallery()
 	{
-		$data['gallery_list'] = $this->db->get('gallery')->result_array();
+		$data['gallery_list'] = $this->db
+        ->join('item_category5','item_category5.i_c5_id = items5.co_category','left')
+        ->where('co_status','1')
+        ->get('items5')->result_array();
+        // print_r('<pre>');
+        // print_r($data['gallery_list']);
+        // die;
 		$this->load->view('user/gallery',$data);
 	}
 
 	public function gallery_single($id)
 	{
-		$data['gallery_list'] = $this->db->where('gallery_id',$id)->get('gallery_list')->result_array();
+
+        $id = $this->security->xss_clean($id);
+
+		$data['gallery_single'] = $this->db
+            ->where('co_id',$id)
+            ->where('co_status','1')
+            ->join('item_category5','item_category5.i_c5_id = items5.co_category','left')
+            ->get('items5')->row_array();
+
+        $data['gallery'] = $this->db
+			->where('gl_id_main', $id)
+			->get('gallery_list')->result_array();
+      
 		$this->load->view('user/gallery_single',$data);
 	}
 

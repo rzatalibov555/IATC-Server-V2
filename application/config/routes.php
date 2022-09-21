@@ -84,6 +84,10 @@ $route['events']                = 'UserController/events';
 $route['event-details/(.*)']    = 'UserController/events_single/$1';
 			// User end
 
+
+
+
+
 			
 			// Admin start
 $route['admin_login']		                    = 'AdminController/index';
@@ -225,6 +229,11 @@ $route['admin_deleteItem_ab/(.*)']    = 'Item4Controller/delete/$1';
 $route['admin_detail_form_ab/(.*)']   = 'Item4Controller/detail_form/$1';
 $route['admin_is_active_set_item_ab'] = 'Item4Controller/isActiveSet';
 
+
+
+
+
+
 // Admin Contact
 $route['admin_item_co_list']	      = 'Item5Controller/index';
 $route['admin_create_item_co']	      = 'Item5Controller/createItem';
@@ -234,6 +243,10 @@ $route['admin_updateItem_coAct/(.*)'] = 'Item5Controller/updateItemAct/$1';
 $route['admin_deleteItem_co/(.*)']    = 'Item5Controller/delete/$1';
 $route['admin_detail_form_co/(.*)']   = 'Item5Controller/detail_form/$1';
 $route['admin_is_active_set_item_co'] = 'Item5Controller/isActiveSet';
+
+$route['admin_add_photo_form_co/(.*)']= 'Item5Controller/add_photo_form_co/$1';
+$route['admin_image_upload/(.*)'] 	  = 'Item5Controller/fileUpload/$1';
+$route['admin_delete_sub_img/(.*)']   = 'Item5Controller/delete_sub_img/$1';
 
 
 
@@ -262,3 +275,9 @@ $route['admin_updateItem_reAct/(.*)'] = 'Item9Controller/updateItemAct/$1';
 $route['admin_deleteItem_re/(.*)']    = 'Item9Controller/delete/$1';
 $route['admin_detail_form_re/(.*)']   = 'Item9Controller/detail_form/$1';
 $route['admin_is_active_set_item_re'] = 'Item9Controller/isActiveSet';
+
+
+
+// Gallery
+
+$route['admin_add_gallery_image/(.*)']   = 'Gallery/add_gallery_image/$1';
