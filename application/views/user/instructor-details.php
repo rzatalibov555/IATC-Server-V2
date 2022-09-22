@@ -46,7 +46,9 @@
 
                             <?php if ($single_teacher['t_img']) { ?>
                                 <img class="teacher-details-shape-2" src="<?php echo base_url('assets/user/'); ?>assets/img/teacher/details/shape/shape-2.png" alt="">
-                            <?php } ?>
+                            <?php }else{
+                                
+                            } ?>
 
 
                         </div>
@@ -137,7 +139,12 @@
                                             <div class="course__item white-bg mb-30 fix">
                                                 <div class="course__thumb w-img p-relative fix">
                                                     <a href="<?php echo base_url('course_single/' . $all_courses_key['c_id']); ?>">
-                                                        <img height="250" style="object-fit: contain;" src="<?php echo base_url('upload/courses/' . $all_courses_key['img']); ?>" alt="">
+                                                        
+                                                        <?php if($all_courses_key['img']){ ?>
+                                                            <img height="250" style="object-fit: contain;" src="<?php echo base_url('upload/courses/' . $all_courses_key['img']); ?>" alt="">
+                                                        <?php }else{ ?>
+                                                            <img height="250" style="object-fit: contain; object-position:bottom;" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
+                                                        <?php } ?>
                                                     </a>
                                                     <div class="course__tag">
                                                         <a href="<?php echo base_url('category/' . $all_courses_key['i_c_id']); ?>"><?php echo $all_courses_key['i_c_name']; ?></a>
@@ -159,7 +166,12 @@
                                                     <h3 class="course__title"><a href="<?php echo base_url('course_single/' . $all_courses_key['c_id']); ?>"><?php echo $all_courses_key['title_' . $this->session->userdata('lang_code')]; ?></a></h3>
                                                     <div class="course__teacher d-flex align-items-center">
                                                         <div class="course__teacher-thumb mr-15">
-                                                            <img src="<?php echo base_url('upload/teachers/' . $all_courses_key['t_img']); ?>" alt="">
+                                                            
+                                                            <?php if($all_courses_key['t_img']){ ?>
+                                                                <img src="<?php echo base_url('upload/teachers/' . $all_courses_key['t_img']); ?>" alt="">
+                                                            <?php }else{ ?>
+                                                                <img style="object-fit: contain;" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
+                                                            <?php } ?>
                                                         </div>
                                                         <h6><a href="<?php echo base_url('instructor_single/' . $all_courses_key['t_id']); ?>"><?php echo $all_courses_key['t_title_' . $this->session->userdata('lang_code')]; ?></a></h6>
                                                     </div>
