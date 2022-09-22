@@ -45,9 +45,9 @@
                                <div class="teacher__thumb w-img fix">
                                    <a href="<?php echo base_url('instructor_single/'.$all_teachers_key['t_id']); ?>">
                                        <?php if($all_teachers_key['t_img']){ ?>
-                                          <img height="300" src="<?php echo base_url('upload/teachers/'.$all_teachers_key['t_img']); ?>" alt="">
+                                          <img height="300" style="object-fit: cover;" src="<?php echo base_url('upload/teachers/'.$all_teachers_key['t_img']); ?>" alt="">
                                        <?php }else{ ?>
-                                          <img src="<?php echo base_url('assets/admin/assets/images/no-img.png'); ?>" alt="">
+                                          <img height="300" style="object-fit: contain;" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
                                        <?php } ?>
                                    </a>
                                </div>

@@ -10,11 +10,11 @@
                <div class="row">
                   <div class="col-xxl-12">
                      <div class="page__title-wrapper mt-110">
-                        <h3 class="page__title"><?php echo $this->lang->line('teachers'); ?></h3>
+                        <h3 class="page__title"><?php echo $this->lang->line('gallery'); ?></h3>
                         <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
                               <li class="breadcrumb-item"><a href="<?php echo base_url('index'); ?>"><?php echo $this->lang->line('home'); ?></a></li>
-                              <li class="breadcrumb-item active" aria-current="page"><?php echo $this->lang->line('teachers'); ?></li>
+                              <li class="breadcrumb-item active" aria-current="page"><?php echo $this->lang->line('gallery'); ?></li>
                            </ol>
                         </nav>
                      </div>
@@ -30,8 +30,8 @@
                <div class="row">
                   <div class="col-xxl-6 offset-xxl-3">
                      <div class="section__title-wrapper text-center mb-60">
-                        <h2 class="section__title"><?php echo $this->lang->line('our'); ?> <br>
-                        <?php echo $this->lang->line('most'); ?> <span class="yellow-bg"> <?php echo $this->lang->line('teacherss'); ?> <img src="<?php echo base_url('assets/user/'); ?>assets/img/shape/yellow-bg-2.png" alt="">  </span> <br>
+                        <h2 class="section__title">
+                         <span class="yellow-bg"> <?php echo $this->lang->line('gallery'); ?> <img src="<?php echo base_url('assets/user/'); ?>assets/img/shape/yellow-bg-2.png" alt="">  </span> <br>
                         </h2>
 <!--                        <p></p>-->
                      </div>
@@ -45,9 +45,9 @@
                                <div class="teacher__thumb w-img fix">
                                    <a href="<?php echo base_url('gallery_single/'.$all_teachers_key['co_id']); ?>">
                                        <?php if($all_teachers_key['co_img']){ ?>
-                                          <img height="300" src="<?php echo base_url('upload/contact/'.$all_teachers_key['co_img']); ?>" alt="">
+                                          <img height="300" class="object_cover" src="<?php echo base_url('upload/contact/'.$all_teachers_key['co_img']); ?>" alt="">
                                        <?php }else{ ?>
-                                          <img src="<?php echo base_url('assets/admin/assets/images/no-img.png'); ?>" alt="">
+                                          <img class="object_cover" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
                                        <?php } ?>
                                    </a>
                                </div>

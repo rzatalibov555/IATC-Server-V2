@@ -100,7 +100,12 @@
                   <div class="col-xxl-8 col-xl-8 col-lg-8">
                      <div class="events__wrapper">
                         <div class="events__thumb mb-35 w-img" style="display:flex; justify-content: center!important">
-                           <img style="width: 50%!important;" src="<?php echo base_url('upload/events/'.$events_single['ev_img']) ?>" alt="">
+                        <?php if($events_single['ev_img']){ ?>
+                            <img style="width: 50%!important;" src="<?php echo base_url('upload/events/'.$events_single['ev_img']) ?>" alt="">
+                        <?php }else{ ?>
+                            <img style="width: 50%!important;" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png') ?>" alt="">
+                        <?php } ?>
+                           
                         </div>
 <!--                        <div class="events__details mb-35">-->
 <!--                           <h3></h3>-->

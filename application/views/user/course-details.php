@@ -46,13 +46,24 @@
                            </ol>
                         </nav>
                      </div>
-                     <span class="page__title-pre"><?php echo $single_course['i_c_name']; ?></span>
-                     <h5 class="page__title-3"><?php echo $single_course['title_' . $this->session->userdata('lang_code')]; ?></h5>
+                     
+                     <?php if($single_course['i_c_name']){ ?>
+                        <span class="page__title-pre"><?php echo $single_course['i_c_name']; ?></span>
+                     <?php } ?>
+                     <?php if($single_course['title_' . $this->session->userdata('lang_code')]){ ?>
+                        <h5 class="page__title-3"><?php echo $single_course['title_' . $this->session->userdata('lang_code')]; ?></h5>
+                     <?php } ?>
+                     
                   </div>
                   <div class="course__meta-2 d-sm-flex mb-30">
                      <div class="course__teacher-3 d-flex align-items-center mr-70 mb-30">
                         <div class="course__teacher-thumb-3 mr-15">
-                           <img src="<?php echo base_url('upload/teachers/' . $single_course['t_img']); ?>" alt="">
+                           
+                           <?php if($single_course['t_img']){ ?>
+                              <img src="<?php echo base_url('upload/teachers/' . $single_course['t_img']); ?>" alt="">
+                           <?php }else{ ?>
+                              <img style="object-fit: contain;" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
+                           <?php } ?>
                         </div>
                         <div class="course__teacher-info-3">
                            <h5><?php echo $this->lang->line('teacherr'); ?></h5>
@@ -63,7 +74,12 @@
 
                   </div>
                   <div class="course__img w-img mb-30" style="display: flex; justify-content: center;">
-                     <img style="width: 50%!important;" src="<?php echo base_url('upload/courses/' . $single_course['img']); ?>" alt="">
+                     
+                     <?php if($single_course['img']){ ?>
+                        <img style="width: 50%!important;" src="<?php echo base_url('upload/courses/' . $single_course['img']); ?>" alt="">
+                     <?php }else{ ?>
+                        <img style="width: 50%!important; object-fit: contain; object-position:center;" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
+                     <?php } ?>
                   </div>
                   <div class="course__tab-2 mb-45">
                      <ul class="nav nav-tabs" id="courseTab" role="tablist">
@@ -537,7 +553,12 @@
                                     <div class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
                                        <div class="course__thumb w-img p-relative fix">
                                           <a href="<?php echo base_url('course_single/' . $all_courses_key['c_id']); ?>">
-                                             <img style="object-fit: cover;" height="220px" src="<?php echo base_url('upload/courses/' . $all_courses_key['img']); ?>" alt="">
+                                             
+                                             <?php if($all_courses_key['img']){ ?>
+                                                <img style="object-fit: cover;" height="220px" src="<?php echo base_url('upload/courses/' . $all_courses_key['img']); ?>" alt="">
+                                             <?php }else{ ?>
+                                                <img style="object-fit: contain; object-position:bottom;" height="220px" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
+                                             <?php } ?>
                                           </a>
                                           <div class="course__tag">
                                              <a href="<?php echo base_url('category/' . $all_courses_key['i_c_id']); ?>"><?php echo $all_courses_key['i_c_name']; ?></a>
@@ -555,7 +576,12 @@
                                           <h3 class="course__title"><a href="<?php echo base_url('course_single/' . $all_courses_key['c_id']); ?>"><?php echo $all_courses_key['title_' . $this->session->userdata('lang_code')]; ?></a></h3>
                                           <div class="course__teacher d-flex align-items-center">
                                              <div class="course__teacher-thumb mr-15">
-                                                <img src="<?php echo base_url('upload/teachers/' . $all_courses_key['t_img']); ?>" alt="">
+                                                
+                                                <?php if($all_courses_key['t_img']){ ?>
+                                                   <img src="<?php echo base_url('upload/teachers/' . $all_courses_key['t_img']); ?>" alt="">
+                                                <?php }else{ ?>
+                                                   <img style="object-fit: contain;" src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
+                                                <?php } ?>
                                              </div>
                                              <h6><a href="<?php echo base_url('instructor_single/' . $all_courses_key['t_id']); ?>"><?php echo $all_courses_key['t_title_' . $this->session->userdata('lang_code')]; ?></a></h6>
                                           </div>
@@ -723,7 +749,12 @@
                                  <div class="course__sm d-flex align-items-center mb-30">
                                     <div class="course__sm-thumb mr-20">
                                        <a href="<?php echo base_url('course_single/' . $all_courses_item['c_id']); ?>">
-                                          <img src="<?php echo base_url('upload/courses/' . $all_courses_item['img']); ?>" style="object-fit: cover;" alt="">
+                                          
+                                          <?php if($all_courses_item['img']){ ?>
+                                             <img src="<?php echo base_url('upload/courses/' . $all_courses_item['img']); ?>" style="object-fit: cover;" alt="">
+                                          <?php }else{ ?>
+                                             <img style="object-fit: contain;" src="<?php echo base_url('assets/user/assets/img/logo/IATC_Loader.png'); ?>" alt="">
+                                          <?php } ?>
                                        </a>
                                     </div>
                                     <div class="course__sm-content">

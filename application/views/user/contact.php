@@ -139,7 +139,8 @@
          <!-- contact area end -->
 
          <!-- contact info area start -->
-         <section class="contact__area grey-bg-2 pt-120 pb-90 p-relative fix">
+         <!-- pt-120 pb-90  -->
+         <section class="contact__area grey-bg-2 p-relative fix">
             <div class="contact__shape">
                <img class="contact-shape-5" src="<?php echo base_url('assets/user/'); ?>assets/img/contact/contact-shape-5.png" alt="">
                <img class="contact-shape-4" src="<?php echo base_url('assets/user/'); ?>assets/img/contact/contact-shape-4.png" alt="">
@@ -184,6 +185,7 @@
 <!--                  </div>-->
 <!--               </div>-->
 <!--            </div>-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12157.747805686455!2d49.8515319!3d40.3770074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x19b9573e86c9e034!2sIsrael%20Azerbaijan%20Training%20Center!5e0!3m2!1sru!2s!4v1663844195368!5m2!1sru!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
          </section>
          <!-- contact info area end -->
       </main>

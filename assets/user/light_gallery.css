@@ -140,7 +140,8 @@
 
 
 .lg-progress-bar .lg-progress{
-    background: #0082F1!important;
+    /* background: #0082F1!important; */
+    background: #2b4eff!important;
 }
 
 

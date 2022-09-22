@@ -8,13 +8,13 @@
 
 
                             <a href="<?php echo base_url('index'); ?>">
-                                <img class="logo-white" src="<?php echo base_url('assets/user/'); ?>assets/img/logo/logo.png" alt="logo">
-                                <img class="logo-black" src="<?php echo base_url('assets/user/'); ?>assets/img/logo/logo.png" alt="logo">
+                                <img class="logo-white " src="<?php echo base_url('assets/user/'); ?>assets/img/logo/logo.png" alt="logo">
+                                <img class="logo-black L_img" src="<?php echo base_url('assets/user/'); ?>assets/img/logo/IATC_DarkLogo.png" alt="logo">
                             </a>
                         
 
                         </div>
-                        <div class="header__category d-none d-lg-block">
+                        <!-- <div class="header__category d-none d-lg-block"> -->
                             <!-- <nav>
                                 <ul>
                                     <li>
@@ -49,7 +49,7 @@
                                     </li>
                                 </ul>
                             </nav> -->
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-10 col-sm-8 col-6">
@@ -66,7 +66,7 @@
 
                                         <?php $allCategory_list = $this->db->limit(12)->order_by('i_c_id', 'DESC')->get('item_category')->result_array(); ?>
                                         <?php if ($allCategory_list) { ?>
-                                            <ul class="submenu" style="overflow: scroll; height:500px!important;">
+                                            <ul class="submenu" style="overflow-y: scroll; height:500px!important;">
                                                 <?php foreach ($allCategory_list as $allCategory_list_key) { ?>
                                                     <li><a href="<?php echo base_url('category/' . $allCategory_list_key['i_c_id']); ?>"><?php echo $allCategory_list_key['i_c_name']; ?></a></li>
                                                 <?php } ?>

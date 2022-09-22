@@ -37,11 +37,18 @@
                         <?php if ($single_teacher['t_img']) { ?>
                             <img src="<?php echo base_url('upload/teachers/' . $single_teacher['t_img']); ?>" alt="">
                         <?php } else { ?>
-                            <img src="<?php echo base_url('assets/admin/assets/images/no-img.png'); ?>" alt="">
+                            <!-- <img src="<?php echo base_url('assets/admin/assets/images/no-img.png'); ?>" alt=""> -->
+                            <img src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
                         <?php } ?>
                         <div class="teacher__details-shape">
                             <img class="teacher-details-shape-1" src="<?php echo base_url('assets/user/'); ?>assets/img/teacher/details/shape/shape-1.png" alt="">
-                            <img class="teacher-details-shape-2" src="<?php echo base_url('assets/user/'); ?>assets/img/teacher/details/shape/shape-2.png" alt="">
+
+
+                            <?php if ($single_teacher['t_img']) { ?>
+                                <img class="teacher-details-shape-2" src="<?php echo base_url('assets/user/'); ?>assets/img/teacher/details/shape/shape-2.png" alt="">
+                            <?php } ?>
+
+
                         </div>
                     </div>
                 </div>

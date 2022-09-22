@@ -37,12 +37,17 @@
                            <h5> <span>8,200+</span> five ster reviews</h5>
                         </div>
                         <div class="about__thumb ml-100">
-                           <img src="<?php echo base_url('upload/about/'.$about['ab_img']); ?>" alt="">
+                           
+                           <?php if($about['ab_img']){ ?>
+                              <img src="<?php echo base_url('upload/about/'.$about['ab_img']); ?>" alt="">
+                           <?php }else{ ?>
+                              <img src="<?php echo base_url('assets/user/assets/img/logo/IATC_DarkLogo.png'); ?>" alt="">
+                           <?php } ?>
                         </div>
-                        <div class="about__banner mt--210">
+                        <!-- <div class="about__banner mt--210">
                            <img src="<?php echo base_url('assets/user/') ?>assets/img/about/about-banner.jpg" alt="">
-                        </div>
-                        <div class="about__student ml-270 mt--80">
+                        </div> -->
+                        <!-- <div class="about__student ml-270 mt--80">
                            <a href="#">
                               <img src="<?php echo base_url('assets/user/') ?>assets/img/about/student-4.jpg" alt="">
                               <img src="<?php echo base_url('assets/user/') ?>assets/img/about/student-3.jpg" alt="">
@@ -50,7 +55,7 @@
                               <img src="<?php echo base_url('assets/user/') ?>assets/img/about/student-1.jpg" alt="">
                            </a>
                            <p>Join over <span>4,000+</span> students</p>
-                        </div>
+                        </div> -->
                      </div>
                   </div>
                   <div class="col-xxl-6 col-xl-6 col-lg-6">
