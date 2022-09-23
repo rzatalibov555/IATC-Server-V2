@@ -34,11 +34,11 @@
                             <div class="footer__widget-body">
                                 <div class="footer__link">
                                     <ul>
-                                        
+
                                         <li><a href="<?php echo base_url('courses'); ?>">Courses</a></li>
                                         <li><a href="<?php echo base_url('events'); ?>">Events</a></li>
                                         <li><a href="<?php echo base_url('instructor'); ?>">Instructor</a></li>
-                                        
+
                                     </ul>
                                 </div>
                             </div>
@@ -66,14 +66,40 @@
                             </div>
                             <div class="footer__widget-body">
                                 <div class="footer__subscribe">
-                                    <form action="#">
+                                    <form action="<?php echo base_url('subscribe'); ?>" method="post">
+                                        <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash();?>" />
                                         <div class="footer__subscribe-input mb-15">
-                                            <input type="email" placeholder="<?php echo $this->lang->line('your_email'); ?>">
+                                            <input type="email" name="e_mail" placeholder="<?php echo $this->lang->line('your_email'); ?>">
                                             <button type="submit">
                                                 <i class="far fa-arrow-right"></i>
                                                 <i class="far fa-arrow-right"></i>
                                             </button>
                                         </div>
+
+                                        <style>
+                                            .info_message {
+                                                color: #0082f1 !important;
+                                            }
+
+                                            .err_email_err {
+                                                color: red !important;
+                                            }
+
+                                            .success_email_message {
+                                                color: green !important;
+                                            }
+                                        </style>
+                                        <?php if ($this->session->flashdata('err_email')) { ?>
+                                            <p class="info_message"><?php echo $this->session->flashdata('err_email'); ?></p>
+                                        <?php } ?>
+
+                                        <?php if ($this->session->flashdata('err_email_err')) { ?>
+                                            <p class="err_email_err"><?php echo $this->session->flashdata('err_email_err'); ?></p>
+                                        <?php } ?>
+
+                                        <?php if ($this->session->flashdata('success_email')) { ?>
+                                            <p class="success_email_message"><?php echo $this->session->flashdata('success_email'); ?></p>
+                                        <?php } ?>
                                     </form>
                                     <!-- <p>Get the latest news and updates right at your inbox.</p> -->
                                 </div>

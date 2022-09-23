@@ -31,7 +31,7 @@ $lang['date']               = 'Tarix';
 $lang['duration']           = 'Müddəti';
 $lang['location']           = 'Məkan';
 $lang['all_eventss']        = 'Bütün tədbirlər';
-$lang['gallery']            = 'Galereya';
+$lang['gallery']            = 'Qalereya';
 
 
 

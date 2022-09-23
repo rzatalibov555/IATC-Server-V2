@@ -249,4 +249,47 @@ class UserController extends CI_controller
 
         $this->load->view('user/event-details', $data);
     }
+
+
+    // ============================================================
+    
+
+    public function subscribe(){
+
+		$subscribe = $_POST['e_mail'];
+		$subscribe = $this->security->xss_clean($subscribe);
+
+		if(!empty($subscribe)){
+
+			$check_subscribe = $this->db->where('sub_email', $subscribe)->get('subscribe')->row_array();
+			
+			if($check_subscribe){
+
+				$this->session->set_flashdata('err_email', 'Siz artıq yeniliklərimizə abunə olmusunuz. Təşəkkür edirik.');
+				redirect($_SERVER['HTTP_REFERER']);
+
+			}else{
+
+				$data = [
+					'sub_email' => $subscribe, 			
+					'sub_date'  => date("Y-m-d H:i:s"), 			
+				];
+	
+				$data = $this->security->xss_clean($data);
+	
+				$this->db->insert('subscribe', $data);
+	
+				$this->session->set_flashdata('success_email', 'Təbriklər! Siz, uğurla abunə oldunuz. Təşəkkür edirik.');
+				redirect($_SERVER['HTTP_REFERER']);
+			}
+
+		}else{
+			$this->session->set_flashdata('err_email_err', 'Diqqət! Boşluq buraxmayın!');
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+
+	}
+
+
+
 }

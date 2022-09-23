@@ -83,7 +83,7 @@ $route['category/(.*)']         = 'UserController/category/$1';
 $route['events']                = 'UserController/events';
 $route['event-details/(.*)']    = 'UserController/events_single/$1';
 			// User end
-
+$route['subscribe']  		 = 'UserController/subscribe';
 
 
 

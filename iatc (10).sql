@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Sep 21, 2022 at 08:48 AM
--- Server version: 10.5.12-MariaDB-cll-lve
--- PHP Version: 7.2.34
+-- Host: 127.0.0.1
+-- Generation Time: Sep 23, 2022 at 08:30 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u369098978_iatc`
+-- Database: `iatc`
 --
 
 -- --------------------------------------------------------
@@ -98,18 +98,23 @@ INSERT INTO `gallery` (`gallery_id`, `gallery_name_az`, `gallery_name_en`, `gall
 --
 
 CREATE TABLE `gallery_list` (
-  `gallery_list_id` int(11) NOT NULL,
-  `gallery_id` int(11) NOT NULL,
-  `gallery_image_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `gl_id` int(11) NOT NULL,
+  `gl_id_main` int(255) NOT NULL,
+  `gl_img_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `gl_date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `gl_creater_id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `gallery_list`
 --
 
-INSERT INTO `gallery_list` (`gallery_list_id`, `gallery_id`, `gallery_image_name`) VALUES
-(6, 3, '1200px-Vintage_mail_bag_at_the_Postal_Museum.jpg'),
-(7, 3, 'whatsapp-image-2019-09-18-at-145310-1568808997.jpg');
+INSERT INTO `gallery_list` (`gl_id`, `gl_id_main`, `gl_img_name`, `gl_date`, `gl_creater_id`) VALUES
+(47, 3, 'upload/contact/1444601663762527.jpg', '2022-09-21 14:15:27', 21),
+(48, 3, 'upload/contact/6413331663762527.png', '2022-09-21 14:15:27', 21),
+(49, 3, 'upload/contact/3843891663762528.jpg', '2022-09-21 14:15:28', 21),
+(50, 3, 'upload/contact/3694491663762528.jpg', '2022-09-21 14:15:28', 21),
+(51, 3, 'upload/contact/5529971663762529.jpg', '2022-09-21 14:15:28', 21);
 
 -- --------------------------------------------------------
 
@@ -258,9 +263,9 @@ CREATE TABLE `items2` (
 --
 
 INSERT INTO `items2` (`c_id`, `title_az`, `title_en`, `title_ru`, `title_tr`, `description_az`, `description_en`, `description_ru`, `description_tr`, `rank`, `date`, `category`, `img`, `img_ext`, `status`, `creater_id`, `creat_date`, `updater_id`, `update_date`, `teacher`, `duration`, `group_size`, `schedule`) VALUES
-(20, 'Uİ/UX dizayner', '', '', '', '<p>Günümüzdə bir çox sahələrə tələbat artmaqda davam edir. Onlardan biri də UI/UX dizayndır. İATC olaraq İT bazarında olan bu tələbatı ödəmək üçün mütəxəssislər yetişdiririk. </p><p>UI/UX nədir?</p><p>UI (User İnterface) istifadəçi istəklərini nəzərə alaraq onların maximum dərəcədə işlərini rahatladacaq  və gözəl dizayna malik web səhifə və tətbiqlərin yaradılması, eyni zamanda mövcud olanların daha da təkminləşdirilməsindən ibarətdir. </p><p>UX ( User Experince) Məhsulun yaradılmasının ilkin mərhələsi olub, istifadəçilərin əvvəlki təcrübələrinə və tələbatlarına əsaslanır. </p><p>Təlim mərkəzində tələbələrimizə həm nəzəri, həm də praktiki biliklər tədris olunur. Dərs müddəti 4 ay davam edir. Tələbələrimiz tez bir zamanda materialı mənimsəyir, əmək bazarında profesional şəkildə öz yerlərin tapırlar. </p><p><br> </p>', '', '', '', '', '2022-05-03', '6', '101_ux_vs_ui_illustration_blog.png', '.png', 1, '21', '2022-08-30 08:16:20', '21', '2022-08-30 08:19:05', '11', '4 ay/ 3 saat', '20', ''),
-(21, 'Uİ/UX dizayner', '', '', '', '<p>Günümüzdə bir çox sahələrə tələbat artmaqda davam edir. Onlardan biri də UI/UX dizayndır. İATC olaraq İT bazarında olan bu tələbatı ödəmək üçün mütəxəssislər yetişdiririk. </p><p>UI/UX nədir?</p><p>UI (User İnterface) istifadəçi istəklərini nəzərə alaraq onların maximum dərəcədə işlərini rahatladacaq  və gözəl dizayna malik web səhifə və tətbiqlərin yaradılması, eyni zamanda mövcud olanların daha da təkminləşdirilməsindən ibarətdir. </p><p>UX ( User Experince) Məhsulun yaradılmasının ilkin mərhələsi olub, istifadəçilərin əvvəlki təcrübələrinə və tələbatlarına əsaslanır. </p><p>Təlim mərkəzində tələbələrimizə həm nəzəri, həm də praktiki biliklər tədris olunur. Dərs müddəti 4 ay davam edir. Tələbələrimiz tez bir zamanda materialı mənimsəyir, əmək bazarında profesional şəkildə öz yerlərin tapırlar. </p><p><br> </p>', '', '', '', '', '2022-07-29', '6', '101_ux_vs_ui_illustration_blog1.png', '.png', 1, '21', '2022-08-30 08:20:49', '', '', '10', '4 ay/ 3 saat', '20', ''),
-(22, 'Frontend Developer', '', '', '', '<p>Frontend proqramlaşdırma sferasına yeni başlayan şəxslər üçün nəzərdə tutulmuş proqramdır. Biz bu proqram çərçivəsində ən populyar proqramlaşdırma dillərindən JavaScripti, React.js-i öyrənəcək, Git-lə işləyəcəyik. Kursda İsrail proqramçılarının real həyatdan seçdikləri və sektordakı son standartlara uyğun nümunələr illüstrasiya olunacaq. Hər zaman yanınızda olan mentorlar isə bütün vacib bilikləri əldə etməyinizə dəstək verəcəklər. Tələbələr mürəkkəb tapşırıqları fərdi və ya qruplar şəklində həll edəcək, əldə etdikləri bilikləri öz layihələrində tətbiq etmək imkanı qazanacaq.</p><p><br> </p>', '', '', '', '', '2022-09-15', '2', 'Frontend-1.png', '.png', 1, '21', '2022-09-05 10:48:42', '21', '2022-09-05 10:49:02', '6', '4 ay/ 3 saat', '20', ''),
+(20, 'Uİ/UX dizayner', '', '', '', '<p>Günümüzdə bir çox sahələrə tələbat artmaqda davam edir. Onlardan biri də UI/UX dizayndır. İATC olaraq İT bazarında olan bu tələbatı ödəmək üçün mütəxəssislər yetişdiririk. </p><p>UI/UX nədir?</p><p>UI (User İnterface) istifadəçi istəklərini nəzərə alaraq onların maximum dərəcədə işlərini rahatladacaq  və gözəl dizayna malik web səhifə və tətbiqlərin yaradılması, eyni zamanda mövcud olanların daha da təkminləşdirilməsindən ibarətdir. </p><p>UX ( User Experince) Məhsulun yaradılmasının ilkin mərhələsi olub, istifadəçilərin əvvəlki təcrübələrinə və tələbatlarına əsaslanır. </p><p>Təlim mərkəzində tələbələrimizə həm nəzəri, həm də praktiki biliklər tədris olunur. Dərs müddəti 4 ay davam edir. Tələbələrimiz tez bir zamanda materialı mənimsəyir, əmək bazarında profesional şəkildə öz yerlərin tapırlar. </p><p><br> </p>', '', '', '', '', '2022-05-03', '6', '', '', 1, '21', '2022-08-30 08:16:20', '21', '2022-08-30 08:19:05', '11', '4 ay/ 3 saat', '20', ''),
+(21, 'Uİ/UX dizayner', '', '', '', '<p>Günümüzdə bir çox sahələrə tələbat artmaqda davam edir. Onlardan biri də UI/UX dizayndır. İATC olaraq İT bazarında olan bu tələbatı ödəmək üçün mütəxəssislər yetişdiririk. </p><p>UI/UX nədir?</p><p>UI (User İnterface) istifadəçi istəklərini nəzərə alaraq onların maximum dərəcədə işlərini rahatladacaq  və gözəl dizayna malik web səhifə və tətbiqlərin yaradılması, eyni zamanda mövcud olanların daha da təkminləşdirilməsindən ibarətdir. </p><p>UX ( User Experince) Məhsulun yaradılmasının ilkin mərhələsi olub, istifadəçilərin əvvəlki təcrübələrinə və tələbatlarına əsaslanır. </p><p>Təlim mərkəzində tələbələrimizə həm nəzəri, həm də praktiki biliklər tədris olunur. Dərs müddəti 4 ay davam edir. Tələbələrimiz tez bir zamanda materialı mənimsəyir, əmək bazarında profesional şəkildə öz yerlərin tapırlar. </p><p><br> </p>', '', '', '', '', '2022-07-29', '6', '', '.png', 1, '21', '2022-08-30 08:20:49', '', '', '10', '4 ay/ 3 saat', '20', ''),
+(22, 'Frontend Developer', '', '', '', '<p>Frontend proqramlaşdırma sferasına yeni başlayan şəxslər üçün nəzərdə tutulmuş proqramdır. Biz bu proqram çərçivəsində ən populyar proqramlaşdırma dillərindən JavaScripti, React.js-i öyrənəcək, Git-lə işləyəcəyik. Kursda İsrail proqramçılarının real həyatdan seçdikləri və sektordakı son standartlara uyğun nümunələr illüstrasiya olunacaq. Hər zaman yanınızda olan mentorlar isə bütün vacib bilikləri əldə etməyinizə dəstək verəcəklər. Tələbələr mürəkkəb tapşırıqları fərdi və ya qruplar şəklində həll edəcək, əldə etdikləri bilikləri öz layihələrində tətbiq etmək imkanı qazanacaq.</p><p><br> </p>', '', '', '', '', '2022-09-15', '2', '101_ux_vs_ui_illustration_blog1.png', '.png', 1, '21', '2022-09-05 10:48:42', '21', '2022-09-05 10:49:02', '6', '4 ay/ 3 saat', '20', ''),
 (23, 'Backend', '', '', '', '<p>Backend developer sistemin arxitekturasını yaradan, datalar bazasının idarə edilməsini planlaşdıran, server parametrlərinə cavabdeh olan, sistemin maksimum səviyyədə səmərəli və sürətli işləməsini təmin edən şəxsdir.  </p><p>Saytın vizual şəkildə gözəl olması, hələ saytın mükəmməl olması demək deyil. Saytın mükəmməl olması üçün onun funksiyanallığının da yüksək səviyyədə olması vacibdir. Bunun üçünsə profisional Back-end developerlərə  ehtiyac var. Bu ehtiyacı ödəmək üçünsə kursumuz tərəfindən back-end dərsləri keçrilir. Dərslərimiz 4 ayı əhatə edir və NoteJS, Java, C#  proqramı tədris olunur.</p><p><br> </p>', '', '', '', '', '2022-09-15', '5', 'backend.png', '.png', 1, '21', '2022-09-05 10:54:54', '21', '2022-09-05 10:56:03', '13', '4 ay/ 3 saat', '20', '');
 
 -- --------------------------------------------------------
@@ -307,10 +312,10 @@ INSERT INTO `items3` (`t_id`, `t_title_az`, `t_title_en`, `t_title_ru`, `t_title
 (6, 'Talibov Mammadrza', 'test en1', 'test ru1', 'test tr1', '<p>2016-2017 ci ildə Richmen geyim şirkətinin İT departamentində baş proqramçı, 2017-ci ildən etibarən indiki vaxta qədər isə ADNSU (Azərbaycan Dövlət Neft Sənaye Universiteti)-da İT departamentində baş proqramçı olaraq fəaliyyət göstərir. Əlavə olaraq Azərbaycan Dövlət Neft Sənaye Universitetində Web Development və Microsoft office specialist kursları üzrə dərslər və Beynəlxalq sertifikat imtahanına hazırlıq dərsləri tədris edir. İlk Proqramını 14 yaşında yazıb. </p><p><a href=\"https://www.youtube.com/channel/UCPZL6wmz8kQ_YoZUWjES3eA/featured\"><strong>SetHub</strong></a> youtube kanalının təsisçisidir.</p><p><br>Bir neçə Özəl və Dövlət sektorlarının saytları üzərində çalışıb.</p><ul><li>Azərbaycan Dövlət Akademik Filarmoniyası</li><li>Azərbaycan Respublikasının Prezidenti yanında Ali Attestasiya komissiyası </li><li>Yeni Azərbaycan Partiyası (Y.A.P.)</li><li>Azərbaycan Respublikası Neft və Sənaye Universitetinin bir neçə saytı və daxili sistemiləri</li><li>və digər bu kimi layilər.</li></ul><p> </p><p><strong>Sertifikatları:</strong></p><ul><li>2014 - <strong>Microsoft Office Excel</strong> (Fərqlənmə sertifikatı)</li><li>2015 - <strong>Full-stack Web Development</strong> (Fərqlənmə sertifikatı)</li><li>2016 - <strong>Full-stack Web Development</strong> (Fərqlənmə sertifikatı)</li><li>2017 - <a href=\"http://talibovrza.hol.es/excel.pdf\"><strong>Exam 77-727 - Microsoft Office Excel 2016</strong></a> (Graduate) <strong>Beynəlxalq</strong></li><li>2018 - <a href=\"http://talibovrza.hol.es/associate.pdf\"><strong>Exam 98-375 - HTML5 Application Development Fundamentals</strong></a> (Graduate) <strong>Beynəlxalq</strong></li><li>2020 - <a href=\"http://talibovrza.hol.es/database.pdf\"><strong>Exam 98-364 - MTA: Database Administration Fundamentals</strong></a> (Graduate) <strong>Beynəlxalq</strong></li><li>2020 - <a href=\"http://talibovrza.hol.es/javaScript.pdf\"><strong>Exam 98-382 - MTA: Introduction to Programming Using JavaScript</strong></a> (Graduate) <strong>Beynəlxalq</strong></li><li>2020 - <a href=\"http://talibovrza.hol.es/html_css.pdf\"><strong>Exam 98-383 - MTA: Introduction to Programming Using HTML and CSS</strong></a> (Graduate) <strong>Beynəlxalq</strong></li></ul>', '<p>En Only a quid me old mucker squiffy tomfoolery grub cheers ruddy cor blimey guvnor in my flat, up the duff Eaton car boot up the kyver pardon you A bit of how\'s your father David skive off sloshed, don\'t get shirty with me chip shop vagabond crikey bugger Queen\'s English chap. Matie boy nancy boy bite your arm off up the kyver old no biggie fantastic boot, David have it show off show off pick your nose and blow off lost the plot porkies bits and bobs only a quid bugger all mate, absolutely bladdered bamboozled it\'s your round don\'t get shirty with me down the pub well.</p>', '<p>Only a quid me old mucker squiffy tomfoolery grub cheers ruddy cor blimey guvnor in my flat, up the duff Eaton car boot up the kyver pardon you A bit of how\'s your father David skive off sloshed, don\'t get shirty with me chip shop vagabond crikey bugger Queen\'s English chap. Matie boy nancy boy bite your arm off up the kyver old no biggie fantastic boot, David have it show off show off pick your nose and blow off lost the plot porkies bits and bobs only a quid bugger all mate, absolutely bladdered bamboozled it\'s your round don\'t get shirty with me down the pub well.</p>', '<p>Tr Only a quid me old mucker squiffy tomfoolery grub cheers ruddy cor blimey guvnor in my flat, up the duff Eaton car boot up the kyver pardon you A bit of how\'s your father David skive off sloshed, don\'t get shirty with me chip shop vagabond crikey bugger Queen\'s English chap. Matie boy nancy boy bite your arm off up the kyver old no biggie fantastic boot, David have it show off show off pick your nose and blow off lost the plot porkies bits and bobs only a quid bugger all mate, absolutely bladdered bamboozled it\'s your round don\'t get shirty with me down the pub well.</p>', 'Müəllim', 'CO Founder en1', 'CO Founder ru1', 'CO Founder tr', 'https://www.facebook.com/mamed.talibov', 'https://www.instagram.com/rza.talibov/', 'https://www.instagram.com/rza.talibov/', 'https://www.linkedin.com/in/rza-talibov-658a6a177/', '', '2022-06-30', '1', 'İATC-teachers-RzaMüəllim.jpg', '.jpg', 1, '21', '2022-06-29 09:01:35', '21', '2022-09-05 10:38:57'),
 (8, 'Kərim Kərimov', '', '', '', '<p>Kərim Kərimov 2013cü ildə məktəbi qızıl medal attestatı ilə bitirib, yüksək balla Bakı Ali Neft Məktəbinin Proseslərin Avtomatlaşdırılması üzrə bakalavr təhsilinə başlayıb. Tələbə olduğu müddətdə proqramlaşdırma ilə yaxından tanış olub, 10-a yaxın yerli startupların ərsəyə gəlməsində iştirak edib. 2018-2020 illər arasında Macarıstanda Budapeşt Texnologiya və İqtisadiyyat universitetində Komputer mühəndisliyi üzrə magistr təhsili alıb. Həmin dövr ərzində Nokia-nın Budapeşt ofisində işləyib. 2020-ci ildə magistr təhsili bitdikdən sonra ölkəyə qayıtmış və PAŞA Bank şirkətində Senior Software Developer kimi işə başlamışdır. 2022 aprel ayında Funsional sahə lideri vəzifəsinə təltif olunmuş, 10-dan çox mobil sahəsində çalışan mühəndislərlə fərqli layihələrdə iştirak edir.</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/kerimovscreations', '', '', 'https://www.linkedin.com/in/kerimovscreations', '', '1996-03-23', '6', 'İATC-teachers-Karim.jpg', '.jpg', 1, '21', '2022-08-19 07:02:11', '21', '2022-08-29 05:52:09'),
 (9, 'Şamxal Quliyev', '', '', '', '<p>Şamxal Quliyev İstanbul Fatih Universitetinin Kompüter Mühəndisliyi fakultəsini bitirib. Proqramlaşdırmaya universitet illərindən başlayıb və 9 ildən çoxdur ki, iOS proqramlaşdırma ilə məşğuldur. iOS team lead və müəllim kimi fəaliyyətinə davam edir. Eyni zamanda öz təcrübələrini youtube kanalında da paylaşır.</p>', '', '', '', 'Müəllim', '', '', '', '', 'https://instagram.com/shamkhalguliyev?igshid=YmMyMTA2M2Y=', 'https://instagram.com/shamkhalguliyev?igshid=YmMyMTA2M2Y=', 'https://www.linkedin.com/in/shamkhal-guliyev', '', '1991-01-01', '7', 'İATC-teachers-Shamxal.jpg', '.jpg', 1, '21', '2022-08-19 07:10:07', '21', '2022-08-29 05:52:20'),
-(10, 'Nigar Kazımova', '', '', '', '<p>Mən dizayn üzrə 3 illik iş təcrübəsi və Müştəri Xidmətləri sahəsində 5 illik təcrübəyə malik dizaynerəm. Azərbaycanda ilk Agile mühitində işləmək mənə nəsib oldu. Mən həmişə yeni bilik və bacarıqlara acam və bunu IG Design bloqum, iştirak etdiyim seminarlar və görüşlər vasitəsilə başqaları ilə bölüşməyə çalışıram. İnsanların sevdiyi məhsullar yaratmaq məni çox həyəcanlandırır. Gəlin dünyamızı dəyişdirək və insanları xoşbəxt edək!</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/profile.php?id=100006275716118', 'https://www.instagram.com/nikadesgn/', 'https://www.instagram.com/nikadesgn/', 'https://www.linkedin.com/in/nigar-kazimova-ux-ui-designer-026393118/', '', '1991-07-20', '4', 'İATC-teachers-Nigar.jpg', '.jpg', 1, '21', '2022-08-19 07:23:03', '21', '2022-08-29 05:51:57'),
+(10, 'Nigar Kazımova', '', '', '', '<p>Mən dizayn üzrə 3 illik iş təcrübəsi və Müştəri Xidmətləri sahəsində 5 illik təcrübəyə malik dizaynerəm. Azərbaycanda ilk Agile mühitində işləmək mənə nəsib oldu. Mən həmişə yeni bilik və bacarıqlara acam və bunu IG Design bloqum, iştirak etdiyim seminarlar və görüşlər vasitəsilə başqaları ilə bölüşməyə çalışıram. İnsanların sevdiyi məhsullar yaratmaq məni çox həyəcanlandırır. Gəlin dünyamızı dəyişdirək və insanları xoşbəxt edək!</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/profile.php?id=100006275716118', 'https://www.instagram.com/nikadesgn/', 'https://www.instagram.com/nikadesgn/', 'https://www.linkedin.com/in/nigar-kazimova-ux-ui-designer-026393118/', '', '1991-07-20', '4', '', '.jpg', 1, '21', '2022-08-19 07:23:03', '21', '2022-08-29 05:51:57'),
 (11, 'Elxan Əzimli', '', '', '', '<p>2015-ci ildən reklam, marketinq, qrafik dizaynla məşğul olub, daha sonra 2018-ci ildən UX/UI olaraq davam edib. Hal hazırda bir çox yerli və xarici şirkətlə çalışır. Mexatronika, Psixologiya, Alternativ enerji və s. onun maraq dairəsidir. 2021-ci ildən IATC ailəsinin üzvüdür.</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/elkhan20', 'https://instagram.com/elkhanazimli?igshid=YmMyMTA2M2Y=', 'https://instagram.com/elkhanazimli?igshid=YmMyMTA2M2Y=', 'https://www.linkedin.com/in/elkhan-azimli-2562a3132', '', '2022-08-01', '4', 'elkhan.jpg', '.jpg', 1, '21', '2022-08-22 06:34:32', '21', '2022-08-26 06:49:02'),
 (12, 'Sənan Abdullayev', '', '', '', '<p>Java Software Engineer. Azərbaycan Dövlət Neft və Sənaye Universitetinin İnformasiya Texnologiyaları ixtisasını bitirib. Programlaşdırma fəaliyyətinə 2020-ci ildən başlayıb. Hal hazırda C++, C#, Java və JavaScript dillərini bilir. Bankçılıq, Sənayenin avtomatlaşdırılması sahəsi onun maraq dairəsindədir.</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/sanan.abdullayev.1610', '', '', 'https://www.linkedin.com/in/sanan-abdullayev-024048170', '', '2001-05-21', '3', 'İATC-teachers-Sanan.jpg', '.jpg', 1, '21', '2022-08-22 06:36:55', '21', '2022-08-29 05:51:46'),
-(13, 'Ruslan Ağakişiyev', '', '', '', '<p>Azərbaycan Dövlət Neft və Sənaye universitetini bitirib. Proqramlaşdırma fəaliyyətinə 2018-ci ildən bəri başlayıb.İlk real proyektini 2020-ci ildə yazıb.İCPC qlobal proqramlaşdırma olimpiadasında final mərhələsinə qədər yüksəlib.Texniki olaraq C++,PHP,Java,Javascript,Typescript,C# kimi proqramlaşdırma dillərini bilir.Hal-hazırda bankçılıq sahəsi ilə məşğuldur.</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/profile.php?id=100084558678207', 'https://instagram.com/r_aghakishiyev?igshid=YmMyMTA2M2Y=', 'https://instagram.com/r_aghakishiyev?igshid=YmMyMTA2M2Y=', '', '', '2022-08-01', '3', '', '.png', 1, '21', '2022-08-22 06:40:56', '21', '2022-08-26 06:48:44'),
+(13, 'Ruslan Ağakişiyev', '', '', '', '<p>Azərbaycan Dövlət Neft və Sənaye universitetini bitirib. Proqramlaşdırma fəaliyyətinə 2018-ci ildən bəri başlayıb.İlk real proyektini 2020-ci ildə yazıb.İCPC qlobal proqramlaşdırma olimpiadasında final mərhələsinə qədər yüksəlib.Texniki olaraq C++,PHP,Java,Javascript,Typescript,C# kimi proqramlaşdırma dillərini bilir.Hal-hazırda bankçılıq sahəsi ilə məşğuldur.</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/profile.php?id=100084558678207', 'https://instagram.com/r_aghakishiyev?igshid=YmMyMTA2M2Y=', 'https://instagram.com/r_aghakishiyev?igshid=YmMyMTA2M2Y=', '', '', '2022-08-01', '3', '', '', 1, '21', '2022-08-22 06:40:56', '21', '2022-08-26 06:48:44'),
 (14, 'Jeyhun Xəlilov', '', '', '', '<p>Test etmə üzrə böyük mühəndis və QA üzrə təlimçi<br>Ceyhun IT sahəsində keyfiyyətə nəzarət üzrə 6 illik təcrübəyə malikdir. O, proqram təminatının test etmə sahəsi üzrə bir çox uğurlu proyektlərə imza atıb.<br>“Software Testing” dünyasına ilk addımlarını Bakcell şirkətində Keyfiyyətə Nəzarət departamentində Test etmə üzrə mühəndis kimi başlayıb.<br>2019-cu ildən Neqsol Holding-ə daxil olan Azerconnect şirkətində Test etmə üzrə böyük mühəndis kimi çalışır.<br>Hal Hazırda isə İsrail Azərbaycan Təlim Mərkəzində parallel olaraq QA təlimçi kimi fəaliyyət göstərir.</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/jeyhunkhalilov26', 'https://www.instagram.com/ceka_khalilov/', 'https://www.instagram.com/ceka_khalilov/', 'https://www.linkedin.com/in/jeyhun-khalilov-756913109/', '', '2022-08-01', '5', 'İATC-teachers-Jeyhun.jpg', '.jpg', 1, '21', '2022-08-22 06:44:24', '21', '2022-08-29 05:51:34'),
 (15, 'Elşad Ağazadə', '', '', '', '<p>Amerikanın Kaliforniya ştatında fəaliyyət göstərən məşhur \"Berkeley Universitetinin Proqramlaşdırma düşərgəsinə\" qatılaraq onların öyrətmə metodologiyasını araşdırıb, Azərbaycana qayıtdıqdan sonra burada hal-hazırda məşhur olan kodlaşdırma düşərgələrindən birində təsis edib. Bu müəssisədə yetişdirdiyi tələbələr hal-hazırda müxtəlif layihələrdə, startaplarda və şirkətlərdə proqramçı kimi öz karyeralarına davam edirlər. Bununla yanaşı Azərbaycanda məşhur neft şirkəti olan \"British Petroliumun\" mütəxəssislərinə proqramlaşdırma və Data Analitika təlimləri keçib. Həmçinin \"Britaniya Konsulluğunun\" təşkil etdiyi fiziki məhdudiyyətli şəxslərin özünü inkişaf məqsədli layihəsində iştirak edərək fiziki məhdudiyyətli şəxslərə web proqramlaşdırma ilə bağlı təlimlər keçib. 2004-2006-cı illərdə komanda ilə birlikdə \"iCanDo LTD\" şirkətini təhsis edib və Nurgün Motors, Toyota, Suzuki və başqa şirkətlərlə uğurlu layihələr həyata keçiriblər. ABŞ-da və xüsusən də Silikon Vadidə fəaliyyət göstərən şirkətlərlə əməkdaşlıq etmişdir və bir çox uğurlu layihələrə imza atıb. Həmçinin Avrasiya üzrə keçirilən Eurasian Startup Awards müsabiqəsində 2019 və 2020-ci illərdə \"Süni Zəka\" və \"Data Science\" kateqoriyaları üzrə münsiflər heyətinin üzvü olmuşdur.</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/mreagayev', 'https://instagram.com/elshad.aghazade?igshid=YmMyMTA2M2Y=', 'https://instagram.com/elshad.aghazade?igshid=YmMyMTA2M2Y=', 'https://www.linkedin.com/in/elshadaghazadeh/', '', '', '1', 'İATC-teachers-Elshad.jpg', '.jpg', 1, '21', '2022-08-26 07:02:59', '21', '2022-08-29 05:51:20'),
 (16, 'Anar İbayev', '', '', '', '<p>2015-ci ildə Notecad.az- ın Ciscoda layihə rəhbəri olmuşdur.BakuTeldəki şəxsi layihəsi Cisco ilə əməkdaşlıq etmişdir. Hal-hazırda isə İsrail Azərbaycan təlim mərkəzi ilə paralel olaraq Gulfstream Distribution-da Team Leader Pre-Sales Engineer kimi fəaliyət göstərir.</p>', '', '', '', 'Müəllim', '', '', '', 'https://www.facebook.com/ibayevanar', '', '', 'https://www.linkedin.com/in/anar-ibayev-102560113/', '', '', '10', '', '.png', 1, '21', '2022-08-26 07:13:52', '', ''),
@@ -388,7 +393,7 @@ CREATE TABLE `items5` (
 --
 
 INSERT INTO `items5` (`co_id`, `co_url`, `co_title_az`, `co_title_en`, `co_title_ru`, `co_title_tr`, `co_description_az`, `co_description_en`, `co_description_ru`, `co_description_tr`, `co_rank`, `co_date`, `co_category`, `co_img`, `co_img_ext`, `co_status`, `co_creater_id`, `co_creat_date`, `co_updater_id`, `co_update_date`) VALUES
-(1, '', 'h1234', 'h2234', 'h3234', 'h4234', '<p>hh1234</p>', '<p>hh2234</p>', '<p>hh3234</p>', '<p>hh4234</p>', '', '2022-06-19', '2', '', '.png', 1, '21', '2022-06-17 14:46:16', '21', '2022-06-17 14:58:31');
+(3, '', 'test gallery', '', '', '', '<p>test gallery test gallery test gallery test gallery test gallery test gallery test gallery test gallery test gallery test gallery test gallery test gallery test gallery</p>', '', '', '', '', '2022-09-21', '1', 'Scree11nshot_1.jpg', '.jpg', 1, '21', '2022-09-21 13:44:51', '21', '2022-09-21 14:33:52');
 
 -- --------------------------------------------------------
 
@@ -568,7 +573,7 @@ CREATE TABLE `items10` (
 --
 
 INSERT INTO `items10` (`ev_id`, `ev_title_az`, `ev_title_en`, `ev_title_ru`, `ev_title_tr`, `ev_description_az`, `ev_description_en`, `ev_description_ru`, `ev_description_tr`, `ev_rank`, `ev_date`, `ev_category`, `ev_img`, `ev_img_ext`, `ev_status`, `ev_creater_id`, `ev_creat_date`, `ev_updater_id`, `ev_update_date`, `ev_teacher`, `ev_duration`, `ev_group_size`, `ev_schedule`) VALUES
-(2, 'events_title_az', 'events_title_en', 'events_title_ru', 'events_title_tr', '<p>events_description_az</p>', '<p>events_description_en</p>', '<p>events_description_ru</p>', '<p>events_description_tr</p>', '', '2022-07-04', '1', '1629359967_sftwrengr2.png', '.png', 1, '21', '2022-07-04 12:46:06', '', '', '', '9:00 am - 5:00 pm', '23 nefer', 'ADNSU 1ci mertebe 314-cu otaq'),
+(2, 'events_title_az', 'events_title_en', 'events_title_ru', 'events_title_tr', '<p>events_description_az</p>', '<p>events_description_en</p>', '<p>events_description_ru</p>', '<p>events_description_tr</p>', '', '2022-07-04', '1', '', '.png', 1, '21', '2022-07-04 12:46:06', '', '', '', '9:00 am - 5:00 pm', '23 nefer', 'ADNSU 1ci mertebe 314-cu otaq'),
 (4, 'sadasdnnnnnnna', 'events_title_enqqnnnnnnnnnna', 'events_title_ru222nnnnnnnnna', 'events_title_tr3333nnnnnnnnnna', '<p>sadsadsadnnnnnnna</p>', '<p>events_description_en777nnnnnnna</p>', '<p>events_description_ru8888nnnnnnnnna</p>', '<p>events_description_tr34343443nnnnnnnnna</p>', '', '2022-07-06', '2', '1629359967_sftwrengr2.png', '.png', 1, '21', '2022-07-04 12:52:54', '21', '2022-07-04 20:54:10', '', 'sd adsnnnnnnnna', 'ds dasd annnnnnnnnnnna', 'da sdsa nnnnnnnnnnnna');
 
 -- --------------------------------------------------------
@@ -799,6 +804,26 @@ INSERT INTO `status` (`s_id`, `s_value`) VALUES
 (2, 'Deactive'),
 (3, 'Pending');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribe`
+--
+
+CREATE TABLE `subscribe` (
+  `sub_id` int(11) NOT NULL,
+  `sub_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `sub_date` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `subscribe`
+--
+
+INSERT INTO `subscribe` (`sub_id`, `sub_email`, `sub_date`) VALUES
+(1, 'rza@mail.ru', '2022-09-15 13:02:50'),
+(5, 'tes2@mail.ru', '2022-09-23 08:25:43');
+
 --
 -- Indexes for dumped tables
 --
@@ -825,7 +850,7 @@ ALTER TABLE `gallery`
 -- Indexes for table `gallery_list`
 --
 ALTER TABLE `gallery_list`
-  ADD PRIMARY KEY (`gallery_list_id`);
+  ADD PRIMARY KEY (`gl_id`);
 
 --
 -- Indexes for table `item7_course_programm`
@@ -966,6 +991,12 @@ ALTER TABLE `status`
   ADD PRIMARY KEY (`s_id`);
 
 --
+-- Indexes for table `subscribe`
+--
+ALTER TABLE `subscribe`
+  ADD PRIMARY KEY (`sub_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -991,7 +1022,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `gallery_list`
 --
 ALTER TABLE `gallery_list`
-  MODIFY `gallery_list_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `gl_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `item7_course_programm`
@@ -1033,7 +1064,7 @@ ALTER TABLE `items4`
 -- AUTO_INCREMENT for table `items5`
 --
 ALTER TABLE `items5`
-  MODIFY `co_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `co_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `items6`
@@ -1130,6 +1161,12 @@ ALTER TABLE `item_status`
 --
 ALTER TABLE `status`
   MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `subscribe`
+--
+ALTER TABLE `subscribe`
+  MODIFY `sub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
