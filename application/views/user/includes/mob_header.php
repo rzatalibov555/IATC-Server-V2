@@ -16,8 +16,8 @@
             <div class="mobile-menu fix"></div>
 
             <div class="sidebar__search p-relative mt-40 ">
-                <form action="#">
-                    <input type="text" placeholder="<?php echo $this->lang->line('search'); ?>...">
+                <form action="<?php echo base_url('search_act'); ?>" method="GET">
+                    <input type="text" name="q" placeholder="<?php echo $this->lang->line('search'); ?>...">
                     <button type="submit"><i class="fad fa-search"></i></button>
                 </form>
             </div>

@@ -132,8 +132,8 @@
                             </nav>
                         </div>
                         <div class="header__search p-relative ml-50 d-none d-md-block">
-                            <form action="#">
-                                <input type="text" placeholder="<?php echo $this->lang->line('search'); ?>...">
+                            <form action="<?php echo base_url('search_act'); ?>" method="GET">
+                                <input type="text" name="q" placeholder="<?php echo $this->lang->line('search'); ?>...">
                                 <button type="submit"><i class="fad fa-search"></i></button>
                             </form>
 <!--                            <div class="header__cart">-->

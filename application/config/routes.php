@@ -84,7 +84,7 @@ $route['events']                = 'UserController/events';
 $route['event-details/(.*)']    = 'UserController/events_single/$1';
 			// User end
 $route['subscribe']  		 = 'UserController/subscribe';
-
+$route['search_act'] 		 = 'UserController/search_act';
 
 
 

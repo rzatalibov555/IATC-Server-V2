@@ -77,6 +77,26 @@
                padding-right: 0px !important;
             }
          </style>
+         <style>
+            .status_course {
+               display: inline-block;
+               height: 24px;
+               line-height: 24px;
+               font-size: 12px !important;
+               font-weight: 500;
+               color: #ffffff !important;
+               background: green;
+               padding: 0 10px;
+               -webkit-border-radius: 4px;
+               -moz-border-radius: 4px;
+               border-radius: 4px;
+            }
+
+            .status_course span {
+               font-size: 12px !important;
+               color: #ffffff !important;
+            }
+         </style>
          <div class="row">
             <div class="col-xxl-12">
                <div class="course__tab-conent">
@@ -122,26 +142,7 @@
                                        </div>
                                     </div>
 
-                                    <style>
-                                       .status_course {
-                                          display: inline-block;
-                                          height: 24px;
-                                          line-height: 24px;
-                                          font-size: 12px !important;
-                                          font-weight: 500;
-                                          color: #ffffff !important;
-                                          background: green;
-                                          padding: 0 10px;
-                                          -webkit-border-radius: 4px;
-                                          -moz-border-radius: 4px;
-                                          border-radius: 4px;
-                                       }
 
-                                       .status_course span {
-                                          font-size: 12px !important;
-                                          color: #ffffff !important;
-                                       }
-                                    </style>
 
                                     <div class="course__more d-flex justify-content-between align-items-center">
                                        <!-- <div class="course__status status_course"> -->

@@ -124,9 +124,9 @@ class UserController extends CI_controller
             ->get('items2')->result_array();
 
 
-            if (!is_numeric($id)) {
-                redirect(base_url('index'));
-            }
+        if (!is_numeric($id)) {
+            redirect(base_url('index'));
+        }
 
         $this->load->view('user/category', $data);
     }
@@ -252,44 +252,80 @@ class UserController extends CI_controller
 
 
     // ============================================================
-    
-
-    public function subscribe(){
-
-		$subscribe = $_POST['e_mail'];
-		$subscribe = $this->security->xss_clean($subscribe);
-
-		if(!empty($subscribe)){
-
-			$check_subscribe = $this->db->where('sub_email', $subscribe)->get('subscribe')->row_array();
-			
-			if($check_subscribe){
-
-				$this->session->set_flashdata('err_email', 'Siz artıq yeniliklərimizə abunə olmusunuz. Təşəkkür edirik.');
-				redirect($_SERVER['HTTP_REFERER']);
-
-			}else{
-
-				$data = [
-					'sub_email' => $subscribe, 			
-					'sub_date'  => date("Y-m-d H:i:s"), 			
-				];
-	
-				$data = $this->security->xss_clean($data);
-	
-				$this->db->insert('subscribe', $data);
-	
-				$this->session->set_flashdata('success_email', 'Təbriklər! Siz, uğurla abunə oldunuz. Təşəkkür edirik.');
-				redirect($_SERVER['HTTP_REFERER']);
-			}
-
-		}else{
-			$this->session->set_flashdata('err_email_err', 'Diqqət! Boşluq buraxmayın!');
-			redirect($_SERVER['HTTP_REFERER']);
-		}
-
-	}
 
 
+    public function subscribe()
+    {
 
+        $subscribe = $_POST['e_mail'];
+        $subscribe = $this->security->xss_clean($subscribe);
+
+        if (!empty($subscribe)) {
+
+            $check_subscribe = $this->db->where('sub_email', $subscribe)->get('subscribe')->row_array();
+
+            if ($check_subscribe) {
+
+                $this->session->set_flashdata('err_email', 'Siz artıq yeniliklərimizə abunə olmusunuz. Təşəkkür edirik.');
+                redirect($_SERVER['HTTP_REFERER']);
+            } else {
+
+                $data = [
+                    'sub_email' => $subscribe,
+                    'sub_date'  => date("Y-m-d H:i:s"),
+                ];
+
+                $data = $this->security->xss_clean($data);
+
+                $this->db->insert('subscribe', $data);
+
+                $this->session->set_flashdata('success_email', 'Təbriklər! Siz, uğurla abunə oldunuz. Təşəkkür edirik.');
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+        } else {
+            $this->session->set_flashdata('err_email_err', 'Diqqət! Boşluq buraxmayın!');
+            redirect($_SERVER['HTTP_REFERER']);
+        }
+    }
+
+
+    // ======================================================
+
+    public function search_act()
+    {
+
+        $search = $_GET['q'];
+        $search = $this->security->xss_clean($search);
+
+        if (!empty($search)) {
+
+            $data['all_courses'] = $this->db
+                // ->limit(9, $id * 9)
+                ->like('title_az', $search)
+                ->or_like('description_az', $search)
+                ->or_like('title_en', $search)
+                ->or_like('title_ru', $search)
+                ->or_like('title_tr', $search)
+                ->or_like('description_en', $search)
+                ->or_like('description_ru', $search)
+                ->or_like('description_tr', $search)
+
+
+                ->order_by('c_id ', 'DESC')
+                ->where('status', '1')
+                ->join('item_category', 'item_category.i_c_id = items2.category', 'left')
+                ->join('items3', 'items3.t_id = items2.teacher', 'left')
+                ->join('status', 'status.s_id = items2.status', 'left')
+                ->get('items2')->result_array();
+
+
+            // print_r('<pre>');
+            // print_r($data['all_courses']);
+            // die;
+
+            $this->load->view('user/search', $data);
+        } else {
+            redirect($_SERVER['HTTP_REFERER']);
+        }
+    }
 }

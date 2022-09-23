@@ -534,7 +534,9 @@
                         </div>
                      </div>
                   </div>
-                  <div class="course__related">
+
+                  <?php if($all_courses_same_category_courses){ ?>
+                     <div class="course__related">
                      <div class="row">
                         <div class="col-xxl-12">
                            <div class="section__title-wrapper mb-40">
@@ -639,6 +641,8 @@
                         </div>
                      </div>
                   </div>
+                  <?php } ?>
+                  
                </div>
             </div>
             <div class="col-xxl-4 col-xl-4 col-lg-4">

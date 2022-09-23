@@ -63,8 +63,8 @@ $lang['program']            = 'Program';
 
 
 
-// $lang[''] = '';
-// $lang[''] = '';
+$lang['find_search'] = 'nəticə tapıldı';
+$lang['se_arch'] = 'axtarış';
 // $lang[''] = '';
 // $lang[''] = '';
 // $lang[''] = '';
